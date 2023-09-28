@@ -7,7 +7,7 @@ function Post ({post}){
         margin: "10px auto",
         width: "80%"
     }
-
+console.log(post)
     return <div style={div}>
         <Link to={`/post/${post.id}`}>
             <h1>{post.name}</h1>

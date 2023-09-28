@@ -10,7 +10,7 @@ export const createAction = async({request}) => {
         origin_country: formData.get('origin_country'),
         type: formData.get('type'),
     }
-
+console.count()
     await fetch(url, {
         method: 'POST',
         headers: {
@@ -18,7 +18,7 @@ export const createAction = async({request}) => {
         },
         body: JSON.stringify(newCheese)
     })
-
+console.count()
     return redirect("/")
 
 }
@@ -27,20 +27,22 @@ export const createAction = async({request}) => {
 export const updateAction = async({request, params}) => {
     const id = params.id
     const formData = await request.formData();
+    console.count()
     const updatedCheese = {
         name: formData.get('name'),
         origin_country: formData.get('origin_country'),
         type: formData.get('type'),
     }
-
-    await fetch(url, + id, {
+console.count()
+    await fetch(url + id, {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(updatedCheese)
     })
-
+console.count()
+console.log(id) 
     return redirect(`/post/${id}`)
 
 }
